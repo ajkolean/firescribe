@@ -1,0 +1,72 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pydist
+*.pytimestamp
+
+# Ignore virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore environment variable files
+*.env
+.env
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore temporary or backup files
+*.tmp
+*.swp
+*.bak
+*.old
+
+
+# Ignore IDE specific files and folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore any test output
+*.out
+*.test
+test_*.py
+tests/
+
+# Ignore node_modules if using any node-related packages
+node_modules/
+
+# Ignore byte-compiled C extensions
+*.so
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore coverage reports
+.coverage
+*.cover
+*.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.lcov
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore pipenv files
+Pipfile.lock
+
+# Ignore any files or extensions specific to your workflow or tools
+*.sqlite
