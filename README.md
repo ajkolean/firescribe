@@ -1,5 +1,11 @@
 # Firescribe
 
+pip3 install openai tiktoken watchdog jsonschema PyYAML requests python-dotenv loguru black pylint
+
+# Packages
+
+pip3 install tiktoken
+
 Here's a revised and detailed file tree based on your latest input, with comments explaining each part:
 
 /firescribe/ # Root directory of the Firewalker Project
