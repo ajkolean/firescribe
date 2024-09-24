@@ -18,9 +18,9 @@ T = TypeVar("T")
 
 class OpenAIService:
     def __init__(self):
-        settings.model_dump()
+        print(settings.model_dump())
         # Initialize OpenAI client
-        self.client = OpenAI()
+        self.client = OpenAI(api_key=settings.openai.api_key)
         print("OpenAI client initialized.")
         # logfire.info("OpenAI client initialized.")
 

@@ -92,3 +92,6 @@ exclude = [".venv", "tests"]
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+oai = "python3 src.oopenai_service.penai_service:(.main)"
