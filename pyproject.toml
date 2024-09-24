@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{ include = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.12.6"
 openai = "*"
 watchdog = "*"
 tiktoken = "*"
@@ -18,26 +18,44 @@ pandas = "*"
 rich = "*"
 sqlalchemy = "*"
 numpy = "*"
-pyyaml = "^6.0.2"
-click = "^8.1.7"
-flake8 = "^7.1.1"
-flake8-pydantic = "^0.3.1"
-flake8-bugbear = "^24.8.19"
-flake8-docstrings = "^1.7.0"
+pyyaml = "*"
+click = "*"
+logfire = "*"
+poetry = "^1.8.3"
 
 [tool.poetry.group.dev.dependencies]
-pylance = "^0.18.0"
-isort = "^5.13.2"
-black = "^24.8.0"
-flake8 = "^7.1.1"
-mypy = "^1.11.2"
-bandit = "^1.7.10"
-pytest = "^8.3.3"
-python-dotenv = "^1.0.1"
+isort = "*"
+black = "*"
+flake8 = "*"
+flake8-pydantic = "*"
+flake8-bugbear = "*"
+flake8-docstrings = "*"
+bandit = "*"
+pytest = "*"
+python-dotenv = "*"
 pre-commit = "*"
 pytest-cov = "*"
 typeguard = "*"
 coverage = "*"
+
+[tool.mypy]
+plugins = [
+  "pydantic.mypy"
+]
+
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+
+# for strict mypy: (this is the tricky one :-))
+disallow_untyped_defs = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
 
 [tool.black]
 line-length = 79
@@ -51,15 +69,6 @@ max-line-length = 79
 ignore = ["E203", "E501", "W503"]
 exclude = ["__pycache__", ".venv", "build", "dist"]
 
-[tool.mypy]
-python_version = "3.12"
-check_untyped_defs = true
-disallow_untyped_calls = true
-disallow_untyped_defs = true
-ignore_missing_imports = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
 
 [tool.bandit]
 targets = ["src"]
