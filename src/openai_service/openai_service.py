@@ -13,7 +13,7 @@ T = TypeVar("T")
 
 
 # Logfire configuration
-load_dotenv()
+# load_dotenv()
 
 
 class OpenAIService:
