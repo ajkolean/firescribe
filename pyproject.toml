@@ -20,8 +20,14 @@ sqlalchemy = "*"
 numpy = "*"
 pyyaml = "*"
 click = "*"
-logfire = "*"
+logfire = {extras = ["system-metrics"], version = "^0.53.0"}
 poetry = "^1.8.3"
+opentelemetry-instrumentation-urllib3 = "^0.48b0"
+opentelemetry-instrumentation-sqlite3 = "^0.48b0"
+opentelemetry-instrumentation-urllib = "^0.48b0"
+opentelemetry-instrumentation-httpx = "^0.48b0"
+opentelemetry-instrumentation-sqlalchemy = "^0.48b0"
+opentelemetry-instrumentation-requests = "^0.48b0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "*"
@@ -56,6 +62,15 @@ disallow_untyped_defs = true
 [tool.pydantic-mypy]
 init_forbid_extra = true
 init_typed = true
+
+[tool.logfire]
+pydantic_plugin_record = "all"
+project_name = "Firescribe"
+console_colors = "always"  # Options: "always", "never", "auto"
+console_min_log_level = "info"
+trace_sample_rate = 0.3
+tags = ["service:my_service", "env:production"]
+record = "all"  # Options: "all", "failure", "metrics"
 
 [tool.black]
 line-length = 79
